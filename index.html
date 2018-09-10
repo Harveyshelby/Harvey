@@ -1,187 +1,233 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta name="google-site-verification" content="-iXhG9GL6pjTRdyRey5V9T9AOC1xRhemD3ZOUDe067Q" />
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125384291-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-125384291-1');
-</script>
-
-      <meta name="google-site-verification" content="-iXhG9GL6pjTRdyRey5V9T9AOC1xRhemD3ZOUDe067Q" />
-
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-7378269339636946",
-    enable_page_level_ads: true
-  });
-</script>
-      <meta name="google-site-verification" content="6pw0v0__6o7J2gOyJ0FKmjn-S8_HaKOEc-rumDw1DVg" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta charset="UTF-8">
-      <link href='https://fonts.googleapis.com/css?family=Barrio|Allan|Amaranth|Allura ' rel='stylesheet'>
-      <link rel="stylesheet" type="text/css" href="fo.css">
+      <meta charset="utf-8">
+      <style type="text/css">
+         font-family: Arial, Helvetica, sans-serif;
+         }
+         * {
+         box-sizing: border-box;
+         }
+         /* style the container */
+         .container {
+         position: relative;
+         border-radius: 5px;
+         background-color: #f2f2f2;
+         padding: 20px 0 30px 0;
+         } 
+         /* style inputs and link buttons */
+         input,
+         .btn {
+         width: 100%;
+         padding: 12px;
+         border: none;
+         border-radius: 4px;
+         margin: 5px 0;
+         opacity: 0.85;
+         display: inline-block;
+         font-size: 17px;
+         line-height: 20px;
+         text-decoration: none; /* remove underline from anchors */
+         }
+         input:hover,
+         .btn:hover {
+         opacity: 1;
+         }
+         /* add appropriate colors to fb, twitter and google buttons */
+         .fb {
+         background-color: #3B5998;
+         color: white;
+         }
+         .twitter {
+         background-color: #55ACEE;
+         color: white;
+         }
+         .google {
+         background-color: #dd4b39;
+         color: white;
+         }
+         /* style the submit button */
+         input[type=submit] {
+         background-color: #4CAF50;
+         color: white;
+         cursor: pointer;
+         }
+         input[type=submit]:hover {
+         background-color: #45a049;
+         }
+         /* Two-column layout */
+         .col {
+         float: left;
+         width: 50%;
+         margin: auto;
+         padding: 0 50px;
+         margin-top: 6px;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         /* vertical line */
+         .vl {
+         position: absolute;
+         left: 50%;
+         transform: translate(-50%);
+         border: 2px solid #ddd;
+         height: 175px;
+         }
+         /* text inside the vertical line */
+         .vl-innertext {
+         position: absolute;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         background-color: #f1f1f1;
+         border: 1px solid #ccc;
+         border-radius: 50%;
+         padding: 8px 10px;
+         }
+         /* hide some text on medium and large screens */
+         .hide-md-lg {
+         display: none;
+         }
+         /* bottom container */
+         .bottom-container {
+         text-align: center;
+         background-color: #666;
+         border-radius: 0px 0px 4px 4px;
+         }
+         /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+         @media screen and (max-width: 650px) {
+         .col {
+         width: 100%;
+         margin-top: 0;
+         }
+         /* hide the vertical line */
+         .vl {
+         display: none;
+         }
+         /* show the hidden text on small screens */
+         .hide-md-lg {
+         display: block;
+         text-align: center;
+         }
+         }
+         .stage {
+         width: 300px; height: 300px;
+         -webkit-perspective: 1600px;
+         -webkit-perspective-origin: 50% -240px;
+         }
+         figure {
+         display: block; position: absolute;
+         width: 300px; height: 300px;
+         background-color: #60c2ef;
+         }
+         -webkit-transform: rotateY(45deg) translateZ(-100px) rotateX(10deg);
+         .cube { -webkit-transform-style: preserve-3d; }
+         figure { -webkit-transform-origin: 50% 50% 0; }
+         .front { -webkit-transform: translateZ(150px); }
+         .back { -webkit-transform: rotateY(180deg) translateZ(150px); }
+         .top { -webkit-transform: rotateX(90deg) translateZ(150px); }
+         .bottom { -webkit-transform: rotateX(-90deg) translateZ(150px); }
+         .left { -webkit-transform: rotateY(-90deg) translateZ(150px); }
+         .right { -webkit-transform: rotateY(90deg) translateZ(150px); }
+         @-webkit-keyframes rotate {
+         0% { -webkit-transform: rotateY(0); }
+         100% { -webkit-transform: rotateY(360deg); }
+         }
+         .cube { -webkit-animation: rotate 10s infinite linear; }
+         figure:before, figure:after {
+         content: ""; display: block; position: absolute;
+         width: 100%; height: 100%; opacity: 0;
+         }
+         figure:before {
+         background: -webkit-radial-gradient(top left, rgba(0, 0, 0, 0.5), #000000);
+         }
+         figure:after {
+         background: -webkit-radial-gradient(top right, rgba(0, 0, 0, 0.5), #000000);
+         }
+         .front:before { -webkit-animation: frontShading1 10s infinite linear; }
+         @-webkit-keyframes frontShading1 {
+         2% { opacity: 0; }
+         25% { opacity: 0.8; }
+         35% { opacity: 0.8; }
+         50% { opacity: 0; }
+         }
+         .top:after {
+         opacity: 0.5; width: 200%; height: 200%;
+         margin-left: -50%; margin-top: -50%;
+         background: -webkit-radial-gradient(bottom, rgba(0, 0, 0, 0), #000000);
+         -webkit-animation: rotateTop 10s infinite linear;
+         }
+         @-webkit-keyframes rotateTop {
+         0% { -webkit-transform: rotateZ(0); }
+         100% { -webkit-transform: rotateZ(360deg); }
+         }
+         .bottom {
+         -webkit-box-shadow: 0 10px 100px rgba(0, 0, 0, 0.7);
+         background-color: rgba(0, 0, 0, 0);
+         }
+         figure {
+         background-image: url(../images/mc_side.png);
+         background-size: 100%;
+         }
+         .top {
+         background-image: url(../images/mc_top.png);
+         }
+      </style>
    </head>
-   <style type="text/css">
-      body{
-      background-color: #1111;
-      margin: 0;
-      }
-      ul {
-      list-style-type: none;
-      margin-left:290px; ;
-      padding: 0;
-      overflow: hidden;
-      background-color: #b30000;
-      }
-      li {
-      float: left;
-      }
-      li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px ;
-      text-decoration: none;
-      font-size: 20pt;
-      position: 
-      }
-      li a:hover {
-      background-color: #111;
-      }
-      .a{
-      height: 500px;
-      width: 1140px;
-      position: absolute;
-      margin-left: 180px;
-      margin-top: 40px;
-      border-radius: 12px;
-      }
-      .b{
-      position: absolute;
-      margin-left: 700px;
-      margin-top: 20px;
-      width: 400px;
-      font-size: 14pt;
-      font-family: verdana;
-      }
-      .c{
-      font-size: 12pt;
-      }
-      .d{
-      height: 500px;
-      width: 800px;
-      position: absolute;
-      margin-left: 180px;
-      margin-top: 600px;
-      border-radius: 12px;
-      }
-      .e{
-      height: 1500px;
-      width: 300px;
-      background-color: lightgray;
-      margin-top: 600px;
-      margin-left: 1020px;
-      position: absolute;
-      }
-      #a1{
-      font-size: 30pt;
-      margin-left: 300px;
-      color: white
-      }
-      .g{
-      background-color: #800000;
-      }
-   </style>
    <body>
-      <div class="g">
-         <p style="height:50px;background-color: #800000;padding-top: 30px;">
-            <strong id="a1">News</strong>
-         </p>
-         <ul>
-            <li><a class="active" href="http://mohamedalyblog.tk">Home</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="yes.html" target="_blank">Contact</a></li>
-         </ul>
-      </div>
-      <div class="a">
-         <p>
-         <h1 style="margin-left: 20px;">George Papadopoulos: Ex-Trump adviser jailed in Russia inquiry</h1>
-         <aside class="b">
-            The former Trump adviser whose remarks in a London pub sparked the US inquiry into possible collusion with Russia has been sentenced to 14 days in jail.
-            <br>
-            <p class="c">
-               George Papadopoulos, 31, told the court in Washington DC he was a "patriotic American" who made a mistake by lying.
-               He pleaded guilty last October to lying to the FBI about the timing of meetings with alleged go-betweens for Moscow.
-               He was the first former Trump aide arrested in the probe into an alleged Kremlin plot to sway the 2016 US vote.
-               US President Donald Trump reacted by taking an apparent swipe at the cost of the investigation into the former aide.
+      <div style="margin: 200px auto;margin-top: 200px;" class="stage">
+         <div class="cube">
+            <figure class="back"></figure>
+            <figure class="top"></figure>
+            <figure class="bottom"></figure>
+            <figure class="left"></figure>
+            <figure class="right"></figure>
+            <figure class="front"></figure>
+            <p style=";margin-top: 50px;position: absolute;margin-left: 50px">
+            <div class="container">
+               <form action="/action_page.php">
+                  <div class="row">
+                     <h2 style="text-align:center">Login with Social Media or Manually</h2>
+                     <div class="vl">
+                        <span class="vl-innertext">or</span>
+                     </div>
+                     <div class="col">
+                        <a href="#" class="fb btn">
+                        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                        </a>
+                        <a href="#" class="twitter btn">
+                        <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                        </a>
+                        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                        </i> Login with Google+
+                        </a>
+                     </div>
+                     <div class="col">
+                        <div class="hide-md-lg">
+                           <p>Or sign in manually:</p>
+                        </div>
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="submit" value="Login">
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div class="bottom-container">
+               <div class="row">
+                  <div class="col">
+                     <a href="#" style="color:white" class="btn">Sign up</a>
+                  </div>
+                  <div class="col">
+                     <a href="#" style="color:white" class="btn">Forgot password?</a>
+                  </div>
+               </div>
+            </div>
             </p>
-         </aside>
-         <img style="margin-left: 20px;" src="https://ichef.bbci.co.uk/news/660/cpsprodpb/57F2/production/_103341522_tv049120077.jpg">
-         </p>
-      </div>
-      <div class="d">
-         <p>
-         <h1 style="margin-left: 20px;">Alibaba's Jack Ma 'to step down and focus on philanthropy'</h1>
-         <img style="margin-left: 20px;" src="https://ichef.bbci.co.uk/news/660/cpsprodpb/0338/production/_103342800_049128090.jpg">
-         <br>
-         <br>
-         <div style="width:700px;margin-left: 20px;font-size: 15pt;font-family: verdana;">   One of China's richest men, Jack Ma, is to step down as executive chairman of the Alibaba  
-            e-commerce empire on Monday, the New York Times reported.
          </div>
-         <br>
-         <div style="margin-left: 20px;font-family: verdana;font-size: 12pt;line-height: 25px;width: 650px;">
-            He will remain on Alibaba's board of directors but focus on philanthropy in education, the newspaper said.
-            Mr Ma co-founded Alibaba in 1999 and has seen it become one of the world's biggest internet companies.
-            With a market value of more than $400bn (£309bn), it includes online selling, film production and cloud computing.
-         </div>
-         </p>
-      </div>
-      <div class="e">
-         <h3 style="margin-left: 20px;font-size: 19pt;">Features</h3>
-         <p>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/6C19/production/_103337672_p06kl45r.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">Face to face with Caracas' kidnap gangs</figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/12ECA/production/_103341577_d82656f0-87d3-4bd1-8157-0f88c592a4ed.png">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">Resurgent anti-Trump'resistance' defines a divided America</figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/148E0/production/_103329148_arguing.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">BBC Capital: How arguing more can make you smarter</figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/33E3/production/_103338231_p06km4y7.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">It's the day when I can remove my mask</figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/54DC/production/_103342712_p06kkfc4.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">Meet the Mumbai's plogging club  </figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/4BA3/production/_103336391_fightwithout.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">Apple vs Amazon : battle of titans </figcaption>
-            <img style="margin-left: 15px;" src="https://ichef.bbci.co.uk/news/270/cpsprodpb/57C9/production/_103337422_049086821.jpg">
-            <figcaption style="margin-left: 20px;font-size: 15pt;">Week in pictures</figcaption>
-         </p>
-      </div>
-      <div>
-         <h3 style="margin-left: 200px;font-size: 19pt;position: absolute;margin-top: 1400px;">Mac Miller: US rapper 'found dead at home' aged 26</h3>
-         <p>
-            <img style="margin-left: 200px;margin-top: 1450px;" src="https://ichef.bbci.co.uk/news/624/cpsprodpb/9DE8/production/_103342404_gettyimages-692327356.jpg">
-            <br>
-         <div style="width:640px;margin-left: 200px;font-size: 15pt;font-family: verdana;">
-            US rapper Mac Miller has been found dead at his California home, a Los Angeles coroner has confirmed.
-         </div>
-         <br>
-         <br>
-         <div style="width:640px;margin-left: 200px;font-size: 12pt;font-family: verdana;line-height: 25px;">
-            Media reports say the 26-year-old, who was open about his substance abuse, died from an apparent overdose.
-            The rapper, whose real name was Malcolm James McCormick, rose to fame after topping US charts with his debut album in 2011.
-            He released his latest record, Swimming, earlier this year and was due to go on tour.
-            "The music artist known as Mac Miller died today in his Studio City home," the LA County Department of Medical Examiner-Coroner said in a statement.
-            "In the late morning of September 7, Malcolm McCormick was found unresponsive.... authorities were called and Miller was pronounced dead at the scene at 11:51 (18:51 GMT).
-            "At this time, an autopsy is pending and a cause of death has not been determined."
-            Miller went through a well-publicised break-up with singer and girlfriend Ariana Grande earlier this year.
-            The pair, who met in 2012, collaborated on a number of songs and performed together at the One Love Manchester concert in 2017.
-         </div>
-         </p>
       </div>
    </body>
 </html>
